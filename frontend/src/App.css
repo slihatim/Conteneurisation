@@ -1,0 +1,111 @@
+.shared-layout {
+  background-color: rgba(255, 255, 255, 0.87);
+  width: 50vw;
+  min-width: 400px;
+  max-width: 800px;
+  min-height: 300px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 25px 40px;
+}
+
+button {
+  margin-bottom: 10px;
+  margin-top: 5px;
+  width: 80px;
+  height: 35px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2.2px solid #367dcb;
+  background-color: #ecf4ff;
+  font-family: 'Poppins';
+  font-weight: 800;
+  color: #367dcb;
+}
+
+button:hover {
+  background-color: #367dcb;
+  color: white;
+}
+
+table {
+  width: 100%;
+  /* min-width: 500px; */
+  border-radius: 20px;
+  text-align: center;
+  margin: 15px 0 15px 0;
+}
+
+thead {
+  background-color: #ecf4ff;
+}
+
+th {
+  font-weight: 600;
+  padding: 5px 0;
+}
+
+th:first-child {
+  border-radius: 15px 0 0 0;
+}
+
+th:last-child{
+  border-radius: 0 15px 0 0;
+}
+
+td {
+  font-size: 0.9rem;
+}
+
+td {
+  border-bottom: 2px solid #ecf4ff;
+}
+
+a {
+  font-weight: 600;
+  color: #367dcb;
+}
+
+.plus-minus {
+  width: auto;
+  height: auto;
+  padding: 2px 8px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px;
+  font-weight: 600;
+}
+
+input {
+  width: 300px;
+  height: 30px;
+  border-radius: 7px;
+  /* border: 2.2px solid #367dcb; */
+  margin-top: 5px;
+  margin-bottom: 10px; 
+  padding-left: 10px;
+}
+
+label {
+  font-weight: 600;
+}
+
+.retour {
+  margin-left: 5px;
+  border: 2px solid #222;
+  color: #222;
+  background-color: #fbfbfb;
+}
+
+.retour:hover {
+  background-color: #222;
+  color: white;
+}
+
+aside {
+  background-color: rgb(238, 144, 144);
+}
