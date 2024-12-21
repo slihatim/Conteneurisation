@@ -1,0 +1,47 @@
+version: '3.8'
+services:
+  postgres:
+    image: localhost:5000/etudiants-postgres
+    container_name: postgres-container
+    ports: 
+      - 5432:5432
+    volumes:
+      - etudiants-data:/var/lib/postgresql/data
+    networks:
+      - etudiants-network
+    environment:
+      POSTGRES_PASSWORD: iinnpptt
+      POSTGRES_USER: postgres
+      POSTGRES_DB: etudiants
+      POSTGRES_HOST_AUTH_METHOD: "md5"
+    
+
+  backend:
+    image: localhost:5000/etudiants-backend
+    container_name: backend-container
+    networks:
+      - etudiants-network
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
+
+  frontend:
+    image: localhost:5000/etudiants-frontend
+    container_name: frontend-container
+    networks:
+      - etudiants-network
+    ports:
+      - 5173:80
+    depends_on:
+      - backend
+    
+
+volumes:
+  etudiants-data:
+    name: etudiants-data
+    external: true
+networks:
+  etudiants-network:
+    name: etudiants-network
+    external: true
