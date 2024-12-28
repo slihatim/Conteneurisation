@@ -1,0 +1,26 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: exam
+  name: getter-role
+rules:
+  - apiGroups: [""]
+    resources: ["pods", "configmaps"]
+    verbs: ["get", "list", "watch"]  
+  - apiGroups: [""]
+    resources: ["pods/log"]
+    verbs: ["get"]                   
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: getter-rolebinding
+  namespace: exam
+subjects:
+  - kind: User
+    name: hatim  
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: getter-role
+  apiGroup: rbac.authorization.k8s.io

@@ -14,7 +14,7 @@ const Notes = () => {
   const {id} = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:8080/etudiants/${id}/notes?page=${pageIndex}&size=5`)
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/etudiants/${id}/notes?page=${pageIndex}&size=5`)
     .then(response => response.json())
     .then(data => setObj(data))
 

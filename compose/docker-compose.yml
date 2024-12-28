@@ -15,7 +15,6 @@ services:
       POSTGRES_DB: etudiants
       POSTGRES_HOST_AUTH_METHOD: "md5"
     
-
   backend:
     image: localhost:5000/etudiants-backend
     container_name: backend-container
@@ -25,7 +24,6 @@ services:
       - 8080:8080
     depends_on:
       - postgres
-
   frontend:
     image: localhost:5000/etudiants-frontend
     container_name: frontend-container
@@ -36,7 +34,6 @@ services:
     depends_on:
       - backend
     
-
 volumes:
   etudiants-data:
     name: etudiants-data

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+
 const AjouterNote = () => {
   const [nomDuCours, setNomDuCours] = useState("");
   const [valeurDeNote, setValeurDeNote] = useState("");
@@ -8,7 +9,7 @@ const AjouterNote = () => {
   const {id} = useParams();
 
   function handleAjouter() {
-    fetch(`http://localhost:8080/etudiants/${id}/notes`, {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/etudiants/${id}/notes`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -1,0 +1,39 @@
+# backend
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-ingress
+  namespace: exam
+  
+spec:
+  rules:
+    - host: back.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: backend-service
+                port:
+                  number: 8080
+---
+# frontend
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-ingress
+  namespace: exam
+  
+spec:
+  rules:
+    - host: front.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend-service
+                port:
+                  number: 80
